@@ -12,4 +12,7 @@ int main()
 	{
 		printf("Candidate is selected");
 	}
+	else{
+		printf("Candidate is not selected");
+	}
 }

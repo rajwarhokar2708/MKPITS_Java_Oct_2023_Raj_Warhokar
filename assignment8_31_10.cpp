@@ -6,24 +6,24 @@ int main()
 	int marks;
 	printf("Enter a marks : ");
 	scanf("%d",&marks);
-	if(marks<50)
+	if(marks<=50)
 	{
 		printf("Grade E");
 		
 	}
-	if(marks>50&&marks<=60)
+	else if(marks<=60)
 	{
 		printf("Grade D");
 	}
-	if(marks>60&&marks<=70)
+	else if(marks<=70)
 	{
 		printf("Grade C");
 	}
-	if(marks>70&&marks<80)
+	else if(marks<80)
 	{
 		printf("Grade B");
 	}
-	if(marks>=80)
+	else
 	{
 		printf("Grade A");
 	}

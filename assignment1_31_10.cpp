@@ -1,4 +1,4 @@
-//Accept marks if it is greater than equal to 50 than display pass otherwise Fail 
+// 1) Accept marks if it is greater than equal to 50 than display pass otherwise Fail 
 
 #include<stdio.h>
 int main()

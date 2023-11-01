@@ -11,7 +11,7 @@ int main()
 		printf("num1 is greater number ");
 		
 	}
-	if(num2>num1)
+	else
 		{
 			printf("num2 is greater number");
 		}
