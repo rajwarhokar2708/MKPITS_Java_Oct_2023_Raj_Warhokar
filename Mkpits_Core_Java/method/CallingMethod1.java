@@ -5,7 +5,9 @@ public class CallingMethod1 {
 	public static void main(String[] args) {
 		//calling by ClassName_variableName
 		MethodDeclaration.getAllData();
-
+		
 	}
-
+	static void getData() {
+		MethodDeclaration.getAllData();
+	}
 }

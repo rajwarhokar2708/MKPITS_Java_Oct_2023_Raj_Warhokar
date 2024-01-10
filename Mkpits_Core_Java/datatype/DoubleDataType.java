@@ -8,9 +8,9 @@ public class DoubleDataType {
 		//default value of double is 0.0
 		//memory size = 8 byte
 		
-		double double_num=5545664.654;
+		double double_Num=5545664.654;
 		
-		System.out.println("Double Number is : "+double_num);
+		System.out.println("Double Number is : "+double_Num);
 
 	}
 

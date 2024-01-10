@@ -12,8 +12,8 @@ public class ImplictTypeCasting//(It callled Wideing also)
 	//If we add two integral number than it take by default integer value
 	public static void main(String[] args) {
 		//ImplictTypeCasting itc=new ImplictTypeCasting();
-		short num1=1;
-		short num2=2;
+		byte num1=1;
+		byte num2=2;
 		int value=num1 + num2;
 		System.out.println(value);
 		ImplictTypeCasting.implict();

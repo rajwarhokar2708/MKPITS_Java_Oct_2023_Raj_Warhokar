@@ -18,7 +18,8 @@ public class MethodWithArugument {
 		mWA.password(getPassword);
 		mWA.gender(getGender);
 		mWA.pinCode(getPinCode);
-		}
+		
+	}
 
 	public void pinCode(int getPinCode) {
 		System.out.println("Pin Code :-"+getPinCode);

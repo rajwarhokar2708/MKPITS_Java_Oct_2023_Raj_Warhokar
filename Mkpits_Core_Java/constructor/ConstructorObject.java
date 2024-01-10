@@ -1,6 +1,6 @@
 package com.mkpits.constructor;
 
-public class ConstructorObject {
+	public class ConstructorObject {
 
 		int pinCode, id;
 		public static void main(String[] args) {
@@ -9,11 +9,12 @@ public class ConstructorObject {
 			object.getMember();
 
 
-			ConstructorObject object2 = new ConstructorObject(440034, 2301);
-			object2.getMember();
+			ConstructorObject object2 = new ConstructorObject(440034, 2301);//Passing Argument
+			object2.getMember(); 
 
 			ConstructorObject object3 = new ConstructorObject(object2);
-			object3.getMember();
+			object3.getMember();//Object to Object Casting Data
+			
 
 		}
 
@@ -21,12 +22,14 @@ public class ConstructorObject {
 			System.out.println("Id is :- "+id + " Pincode is :- "+pinCode);
 		}
 
-		public ConstructorObject() {
+		public ConstructorObject()//Non Parameterizes Constructor
+		{
 			pinCode = 440030;
 			id = 152;
 			System.out.println("Constructor with no Arguement");
 		}
-		public ConstructorObject(int p, int i) {
+		public ConstructorObject(int p, int i) //Parameterizes Construtor
+		{
 
 			pinCode = p;
 			id = i;
@@ -40,8 +43,4 @@ public class ConstructorObject {
 			pinCode = o.pinCode;
 			id = o.id;
 		}
-
-
-
-
 	}	

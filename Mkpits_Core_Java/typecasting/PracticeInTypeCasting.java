@@ -8,7 +8,9 @@ public class PracticeInTypeCasting {
 		PracticeInTypeCasting object=new PracticeInTypeCasting(465,550030);
 		PracticeInTypeCasting obj2=new PracticeInTypeCasting(object);
 		
-	
+	double d=106465454.56;
+	int i=(int)d;
+	System.out.println(i);
 	}
 	public PracticeInTypeCasting() {
 		pinCode=440030;

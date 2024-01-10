@@ -4,6 +4,9 @@ public class Raj2 {
 	
 	public static void main(String[] args) {
 	Raj2 r=new Raj2();
+	AssignmentOperators obj=new AssignmentOperators();
+	obj.addEqualTO();
+	obj.equalTo();
 	r.m1();
 	r.m2();
 	
@@ -15,8 +18,6 @@ public class Raj2 {
 	
 	  char ch = '0';
       System.out.println(ch-- + --ch);
-      
-      
 	}
 
 	private void m1() {

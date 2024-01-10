@@ -6,7 +6,7 @@ public class CallingAllTypeOfMethod {
 
 	public static void main(String[] args) {
 		AllTypefMethods obj=new AllTypefMethods();
-		obj.allData();
+		obj.allData();//Called method form AllTypeMethods Class
 
 	}
 

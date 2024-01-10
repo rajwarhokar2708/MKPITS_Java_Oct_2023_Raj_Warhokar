@@ -34,13 +34,13 @@ public class AssignmentOperators {
 		
 	}
 
-	private void addEqualTO() {
+	public void addEqualTO() {
 		int a=5,b=6; 
 		System.out.println(a+=b);//(a=a+b)
 		
 	}
 
-	private void equalTo() {
+	protected void equalTo() {
 		int a=5,b=6; 
 		System.out.println(a==b);
 	}
