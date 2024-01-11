@@ -12,7 +12,7 @@ public class Call_2 {
 	public static void main(String[]args) {
 		System.out.println("password : "+Call_1.password);
 		//System.out.println("My name is "+my_Name);
-		//System.out.println(name);
+		//System.out.println(name);z
 	}
 
 }

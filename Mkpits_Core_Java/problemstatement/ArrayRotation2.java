@@ -13,13 +13,21 @@ public class ArrayRotation2 {
 	}
 
 	public void rotation() throws NumberFormatException, IOException {
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		int rotate=Integer.parseInt(br.readLine());
+//		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+//		int rotate=Integer.parseInt(br.readLine());
+		int rotation=3;
 		int [] arr= {1,2,3,4};
-		for(int loop=0;loop<rotate;loop++) {
-		
-		
+		int len=arr.length;
+		int arr1[] = new int[arr.length];
+		int arr2[]=new int [arr.length];
+		for(int i=0;i<arr.length;i++) {
+			arr1[len-1]=arr[i];
+			len--;
 		}
-	}
+		for(int j=0;j<arr.length;j++) {
+			System.out.println(arr1[j]);
+		}
+	}	
+	
 
 }

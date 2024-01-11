@@ -15,18 +15,17 @@ public class ScoundLargestNumberInArray
 	}
 
 	private void largestNumber() throws NumberFormatException, IOException {
-//		BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
-//		System.out.println("Enter a Array Size :- ");
-//		
-//		int size=Integer.parseInt(reader.readLine());
-//		int arr[]=new int [size];
-//		System.out.println("Enter Array :-");
-//		for(int userLoop=0;userLoop<size;userLoop++)
-//		{
-//			arr[userLoop]=Integer.parseInt(reader.readLine());
-//		}
+		BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter a Array Size :- ");
 		
-		int arr[]= {65,85,45,9,95,95};
+		int size=Integer.parseInt(reader.readLine());
+		int arr[]=new int [size];
+		System.out.println("Enter Array :-");
+		for(int userLoop=0;userLoop<size;userLoop++)
+		{
+			arr[userLoop]=Integer.parseInt(reader.readLine());
+		}
+		
 		
 		int temp;
 		int oLoop;
@@ -44,15 +43,16 @@ public class ScoundLargestNumberInArray
 				}
 			}
 			
-			
 		}
+		
+		
 		int largest=arr[0];
-		System.out.println("the largest number  "+largest);
 		
 		for (int i : arr) 
 		{
 			System.out.println(i);
 		}
+		
 		
 		int secLargest = 0;
 		for(int i=arr.length-1; i>0; i--) 
