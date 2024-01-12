@@ -8,10 +8,12 @@ public class OuterClass
 	
 	public class InnerClass
 	{
-		int num2=50;
-		void getData()
-		{
-			System.out.println("Inner Class Method called Succesfully ");
+		public class AnotherInnerClass{
+			int num2=50;
+			void getData()
+			{
+				System.out.println("Inner Class Method called Succesfully ");
+			}
 		}
 	}
 }
