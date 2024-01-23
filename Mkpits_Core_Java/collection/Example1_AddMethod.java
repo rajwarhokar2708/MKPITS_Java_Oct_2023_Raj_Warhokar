@@ -1,5 +1,6 @@
 package com.mkpits.collection;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
@@ -7,12 +8,12 @@ import java.util.StringJoiner;
 public class Example1_AddMethod {
 
 	public static void main(String[] args) {
-		List<String> list=new ArrayList<String>();
+		ArrayList<String> list=new ArrayList<String>();
 		list.add("Nagpur");
 		list.add("Jaipur");
 		list.add("Lucknow");
 		list.add("Indore");
-		list.add("Jaipur");
+		list.add("");
 		list.add("Hydrabad");
 		list.add("Indore");
 		System.out.println(list);
@@ -28,15 +29,21 @@ public class Example1_AddMethod {
 		
 		list.add(3,"Banglore");//Adding element on specific index
 		for (String string : list) {
-			System.out.println(string);
+			System.out.println("add  -->"+string);
 		}
 		
-		list.addAll(list2);
-		System.out.println(list);//Adding another Complete list2 on list1
+//		list.addAll(list2);
+//		System.out.println(list);//Adding another Complete list2 on list1
+//		
+//		StringJoiner joiner = new StringJoiner(" # ");//String Joiner Class Join the element in betwwen two element
+//		joiner.add(list.get(2)).add(list.get(3));
+//		System.out.println("-->"+joiner);
 		
-		StringJoiner joiner = new StringJoiner(" # ");//String Joiner Class Join the element in betwwen two element
-		joiner.add(list.get(2)).add(list.get(3));
-		System.out.println("-->"+joiner);
+		list.add("Raj");
+		System.out.println(list);
+		
+
+
 	}
 
 }
