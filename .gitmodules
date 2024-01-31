@@ -1,3 +1,6 @@
 [submodule "MKPITS_COREJAVA_RAJ_WARHOKAR"]
 	path = MKPITS_COREJAVA_RAJ_WARHOKAR
 	url = https://github.com/rajwarhokar2708/MKPITS_COREJAVA_RAJ_WARHOKAR.git
+[submodule "HTML_MKPITS_RAJ"]
+	path = HTML_MKPITS_RAJ
+	url = https://github.com/rajwarhokar2708/HTML_MKPITS_RAJ.git
