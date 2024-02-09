@@ -1,0 +1,12 @@
+p {
+  font-size: xx-large;
+  font-style: italic;
+  font-display: calc(10ms + 5s);
+  font-weight: 300;
+}
+body {
+  border: rgb(203, 27, 109) solid 5px;
+  /* background-color: floralwhite; */
+  background-image: url(/IMAGE/dog.jpg);
+  background-size: auto;
+}

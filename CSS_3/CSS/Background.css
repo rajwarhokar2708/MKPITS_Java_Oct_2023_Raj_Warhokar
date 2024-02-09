@@ -1,0 +1,12 @@
+h1 {
+  border: 2px solid;
+  text-align: center;
+}
+/* This astriq (*) is known for Universal Selecter
+    It Works  on all HTML elements Means Head Tag Body Tag All*/
+
+/* Body Tag is Only For Body  */
+* {
+  background-color: aqua;
+  color: red; /* It is only for text */
+}
