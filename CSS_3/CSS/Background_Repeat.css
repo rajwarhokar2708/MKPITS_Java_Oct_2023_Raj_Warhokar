@@ -1,0 +1,10 @@
+h1 {
+  text-align: center;
+  font-style: italic;
+}
+body {
+  background-image: url(/IMAGE/Audi_Car.jpg);
+  background-size: 600px;
+  background-repeat: no-repeat;
+
+}

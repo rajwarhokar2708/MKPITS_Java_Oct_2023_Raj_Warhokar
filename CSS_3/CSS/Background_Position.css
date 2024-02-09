@@ -1,0 +1,14 @@
+* {
+  background: url(/IMAGE/Audi_E-Tron.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+h1 {
+  text-align: center;
+  color: rgb(251, 101, 101);
+  font-style: italic;
+  font-size: xx-large;
+  font-stretch: ultra-expanded;
+}

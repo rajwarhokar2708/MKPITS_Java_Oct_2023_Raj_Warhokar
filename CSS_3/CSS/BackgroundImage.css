@@ -1,11 +1,11 @@
 * {
   background-image: url(/IMAGE/flowers.jpeg);
   /* background-size: cover; */
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-clip: border-box;
+  /* background-size: 70%; */
+  /* background-repeat: no-repeat; */
+  /* background-clip: border-box; */
   /* background-position: right; */
-  background-position-x: center;
+  /* background-position-x: center; */
   /* background-origin: border-box; */
   /* border-image-source: url(/IMAGE/cat.jpg); */
 }
