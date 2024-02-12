@@ -1,0 +1,10 @@
+.paragraph {
+  color: rgb(200, 20, 20);
+  direction: rtl;
+  text-align:start;
+}
+h1 {
+  color: rgb(20, 20, 150);
+  direction: ltr;
+  text-align: center;
+}

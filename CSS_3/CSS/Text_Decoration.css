@@ -1,0 +1,17 @@
+.paragraph {
+  color: rgb(200, 20, 20);
+  direction: rtl;
+  text-align: start;
+  letter-spacing: 2px;
+  line-height: 2em;
+  text-decoration: overline underline;
+}
+h1 {
+  color: rgb(20, 20, 150);
+  direction: ltr;
+  text-align: center;
+  /* font-size: 3em; */
+  letter-spacing: 1px;
+  line-height: 2em;
+  text-decoration: line-through ;
+}
