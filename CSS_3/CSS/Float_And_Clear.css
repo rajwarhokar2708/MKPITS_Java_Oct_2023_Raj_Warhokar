@@ -1,0 +1,15 @@
+img {
+  /* position: fixed; */
+  height: 200px;
+  float: left;
+}
+.image {
+  height: 250px;
+  float: right;
+}
+p {
+  clear: ;
+}
+* {
+  margin: 0px;
+}
