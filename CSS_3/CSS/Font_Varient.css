@@ -1,9 +1,12 @@
 h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 200%;
+  font-style: italic;
+  font-variant: small-caps;
 }
 p {
   font-family: "Times New Roman", Times, serif;
   font-size: large;
   font-stretch: extra-condensed;
+  font-style: oblique;
 }

@@ -1,0 +1,17 @@
+a {
+  padding-left: 5px;
+}
+a:hover {
+  color: black;
+}
+a:active {
+  color: brown;
+  font-style: italic;
+}
+a:visited {
+  color: aqua;
+  font-style: oblique;
+}
+a:link{
+    color: black;
+}

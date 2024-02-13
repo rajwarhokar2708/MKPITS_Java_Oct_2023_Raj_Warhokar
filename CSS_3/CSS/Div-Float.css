@@ -1,0 +1,23 @@
+.container {
+  width: auto;
+  overflow: auto;
+  border: 2px solid;
+  float: right;
+  text-align: end;
+  background-color: coral;
+}
+.container > div {
+  /* float: left; */
+  padding-left: 10px;
+  display: inline;
+  /* text-align: end; */
+  text-decoration: underline;
+  font-size: large;
+  font-weight: 700;
+}
+img {
+  height: 20px;
+  padding-top: 4px;
+  border: 2px solid;
+  
+}
