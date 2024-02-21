@@ -19,3 +19,7 @@ a:active {
   font-size: 25px;
   text-shadow: 2px 2px 2px rgb(153, 246, 100);
 }
+img {
+  height: 20px;
+  float: left;
+}

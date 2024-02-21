@@ -1,0 +1,109 @@
+* {
+  background-color: white;
+  margin: 0%;
+}
+.banner {
+  border: 2px solid;
+  display: flex;
+}
+.search_button {
+  height: 41px;
+  width: 44px;
+  padding: 8px 8px 8px;
+  margin-bottom: 5px;
+  /* float: left; */
+  border: none;
+  background-color: transparent;
+  padding-top: 20px;
+}
+.search_logo {
+  height: 24px;
+  height: 24px;
+  fill: none;
+  display: flex;
+  border: none;
+  margin: 0%;
+  background-color: transparent;
+}
+.input_search {
+  /* font-size: 17px; */
+  height: 40px;
+  width: 345px;
+  /* text-align: left; */
+  /* display:; */
+  /* text-align: center; */
+  /* padding-left: 30em; */
+  margin-top: 10px;
+  /* border: 1px solid; */
+  padding-right: -100px;
+  border: none;
+  background-color: transparent;
+}
+
+.input_div {
+  display: inline-block;
+  /* vertical-align: top; */
+  /* text-align: center; */
+  /* flex-grow: 1; */
+  /* border: solid; */
+  border-radius: 10px;
+  /* padding: 1px; */
+  /* padding-bottom: 1px; */
+  background-color: rgb(237, 245, 250);
+  /* text-align: center; */
+  /* background-color: rgb(205, 232, 254); */
+  /* padding-right: 500px; */
+  display: flex;
+}
+
+.loginmain {
+  display: flex;
+  padding-left: 10px;
+  margin-left: 400px;
+}
+.admin_img {
+  display: inline-block;
+  height: 24px;
+  padding-top: 23px;
+  /* padding-left: 5px; */
+  padding-left: 10px;
+}
+.span {
+  display: flex;
+  font-size: larger;
+  padding-top: 24px;
+}
+.arrow {
+  display: flex;
+  height: 24px;
+  padding-top: 25px;
+}
+.cart_div {
+  display: flex;
+}
+.cart_icon {
+  padding-left: 15px;
+}
+.cart_div > .span_cart {
+  padding-top: 18px;
+  padding-left: 5px;
+  font-size: larger;
+}
+.store_div {
+  display: flex;
+  padding-right: 50px;
+}
+.store_img {
+  padding-left: 5px;
+}
+/* .store_span {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 20px;
+} */
+/* .scroll {
+  padding: 100px;
+  display: flex;
+  height: 20px;
+  width: 10px;
+} */
