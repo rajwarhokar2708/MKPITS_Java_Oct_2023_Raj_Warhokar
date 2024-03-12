@@ -228,7 +228,7 @@
 .homeappliancefigcaption {
   background-color: white;
 }
-.homeappliancesfig {
+.homeappliancefig {
   background-color: white;
 }
 .arrowimghomefurniture {
@@ -283,6 +283,22 @@
 }
 .twoweelerratingdiv {
   display: flex;
+  background-color: transparent;
+}
+.twoweelerfig {
+  background-color: transparent;
+}
+.twoweelerratingdiv {
+  background-color: transparent;
+}
+.twowheelercaption {
+  background-color: transparent;
+}
+.arrowimgtwowheels {
+  background-color: transparent;
+}
+.twowheelerimg {
+  background-color: transparent;
 }
 /* ----------------------------------------------------------------------------------- */
 #parent-container {
