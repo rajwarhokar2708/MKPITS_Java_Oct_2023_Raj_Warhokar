@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>It is Heading of H1</h1>
+    <h1>It is Heading of H1 2</h1>
+    <h2>Heading 2</h2>
+    <p id="tecnocrats">Tecnocrats Solution <span>Paragraph 1 Span</span></p>
+    <p id="find">Tecnocrats Solution 2 <span>Paragraph 2 Span</span></p>
+    <div>
+      <p>1st p inside div</p>
+      <p>2nd p inside div</p>
+    </div>
+
+    <script>
+      let getSpan = document.getElementById("tecnocrats");
+      let result = getSpan.getElementsByTagName("span");
+      document.write(result);
+      console.log(result);
+    </script>
+  </body>
+</html>

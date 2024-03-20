@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Overwrite</h1>
+    <button id="mybtn">Click Me</button>
+    <script>
+      function display_1() {
+        alert(`Button clicked 1`);
+      }
+      function display_2() {
+        alert(`Button Clicked 2`);
+      }
+      let btn = document.getElementById(`mybtn`);
+      btn.addEventListener(`click`, display_1); // First click event listener
+      btn.addEventListener(`click`, display_2); // Second click event listener
+    </script>
+  </body>
+</html>

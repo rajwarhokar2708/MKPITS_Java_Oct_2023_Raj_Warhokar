@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Overwrite</h1>
+    <button id="mybtn">Click Me</button>
+
+    <script>
+      function display_1() {
+        alert(`Button Display 1 Clicked`);
+      }
+      function display_2() {
+        alert(`Button Display 2 clicked`);
+      }
+      document.getElementById(`mybtn`).onclick = display_1;
+        document.getElementById(`mybtn`).onclick = display_2;
+    </script>
+  </body>
+</html>
