@@ -1,0 +1,20 @@
+#matrix {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  margin: 170px;
+  margin-top: 100px;
+  cursor: pointer;
+}
+
+.cell {
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+.selected {
+  background-color: green;
+}
+.wrong {
+  background-color: red;
+}
