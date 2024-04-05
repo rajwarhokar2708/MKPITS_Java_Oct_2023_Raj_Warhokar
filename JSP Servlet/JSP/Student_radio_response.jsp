@@ -7,23 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Declaration of JSP</h2>
-
-<%!
-public String makeItLower(String data){
-	return data.toLowerCase();
-}
-%>
-
-The String in Lower Case is : <%= makeItLower("MKPITS") %><br>
-
-<%!
-public void makeItLower(){
-	
-	
-}
-%>
-
-<%=  %>
+	Your Name is :${param.fName} ${param.lName} <br><br>
+	Country :${param.country }<br><br>
+	Favourite Language :${param.favlang }
 </body>
 </html>

@@ -8,10 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Expression of JSP</h2>
- The Time on Server is : <%= new Date()%><br>
- Converting String to Upper Case : <%= new String("hello").toUpperCase() %><br>
- 25 Multiplied by 4 = <%=25*4 %><br>
- Is 75 less than 69 : <%= 75< 69 %>
+<h3>JSP Page Heading </h3>
+The times on the server is <%=new Date() %>
 </body>
 </html>
