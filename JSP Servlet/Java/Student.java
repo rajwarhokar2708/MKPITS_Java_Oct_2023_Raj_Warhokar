@@ -1,9 +1,15 @@
-package com.mkpits.model;
+package com.mkpits.mvc;
 
 public class Student {
 	private String firstName;
 	private String lastName;
-	private boolean isgoidCustomer;
+	private String email;
+	public Student(String firstName, String lastName, String email) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -16,16 +22,11 @@ public class Student {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public boolean isIsgoidCustomer() {
-		return isgoidCustomer;
+	public String getEmail() {
+		return email;
 	}
-	public void setIsgoidCustomer(boolean isgoidCustomer) {
-		this.isgoidCustomer = isgoidCustomer;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public Student(String firstName, String lastName, boolean isgoidCustomer) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.isgoidCustomer = isgoidCustomer;
-	}
+
 }
