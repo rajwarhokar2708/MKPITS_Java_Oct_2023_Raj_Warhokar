@@ -1,0 +1,60 @@
+@charset "ISO-8859-1";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body {
+  color: rgb(20, 1, 1);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20p 10%;
+  z-index: 100;
+  align-items: center;
+  /* border: 1px solid; */
+}
+.logo {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 600;
+  /* color: white; */
+  position: relative;
+}
+.navbar > a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+  /* color: white; */
+}
+.navbar > a:hover {
+  color: aqua;
+}
+.navbar > .loginBtn {
+  border: 1px solid;
+  border-radius: 3px;
+  color: black;
+  background-color: rgb(112, 178, 235);
+  margin-right: 10px;
+  height: 40px;
+  width: 85px;
+  text-align: center;
+  padding-top: 5px;
+}
+.navbar > .loginBtn:hover {
+  height: 45px;
+  width: 90px;
+  color: black;
+  background-color: aqua;
+}
