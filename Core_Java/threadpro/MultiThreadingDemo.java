@@ -8,12 +8,17 @@ public class MultiThreadingDemo {
 		try {
 			thread1.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		MyThread3SleepMethod thread2=new MyThread3SleepMethod();
 		thread2.start();
+		try {
+			thread2.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		thread2.start();
 		
 	}
