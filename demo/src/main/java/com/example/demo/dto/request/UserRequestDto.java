@@ -18,13 +18,15 @@ import java.time.LocalDate;
 public class UserRequestDto {
 
         private Integer id;
-
+        @NotNull
         @Size(min = 6, max = 45, message = "'username' can be minimum 6 character and maximum 45 characters")
         @Pattern(regexp = "^[a-zA-Z0-9]{6,12}$", message = "username must be of 6 to 12 length with no special characters")
         private String username;
 
-        @NotNull
-        @Pattern(regexp = "^(?=.[a-z])(?=.[A-Z])(?=.\\d)(?=.[@#$%^&+=]).{8,20}$+")
+        @NotNull(message = "'password' cannot be null'")
+        @Size(min = 4, max = 45, message = "Password must be at least 4 characters long")
+        @Pattern(regexp = "^(?=.[a-z])(?=.[A-Z])(?=.\\d)(?=.[@$!%?&])[A-Za-z\\d@$!%?&]{8,}$",
+                message = "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character")
         private String password;
 
         @NotNull
@@ -37,7 +39,7 @@ public class UserRequestDto {
         @Size(min = 6, max = 45, message = "'lastname' can be minimum 6 character and maximum 45 characters")
         private String lastName;
 
-
+        @NotNull
         private LocalDate dateOfBirth;
 
 

@@ -42,6 +42,7 @@ public class UserManagementController {
 
     //Post is for to save new data in database
     @PostMapping(path = "/v1/users")
+//    public ResponseEntity<Object> createUser(@PathVariable("id") Integer id,@RequestBody UserRequestDto userRequestDto ){
     public ResponseEntity<Object> createUser(@Valid @RequestBody UserRequestDto userRequestDto) {
         boolean isValidAge = userValidator.validateAge(userRequestDto.getDateOfBirth());
         if(!isValidAge) {
@@ -51,6 +52,7 @@ public class UserManagementController {
                     .build();
             return ResponseEntity.badRequest().body(errorResponseDto);
         }
+//        userRequestDto.setId(id);
         UserResponseDto userResponseDto = userService.createUser(userRequestDto);
         return ResponseEntity.ok(userResponseDto);
     }
