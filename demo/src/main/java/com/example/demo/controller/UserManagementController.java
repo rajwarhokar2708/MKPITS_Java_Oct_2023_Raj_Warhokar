@@ -31,6 +31,7 @@ public class UserManagementController {
     @GetMapping(path = "/v1/users/{id}")
     public ResponseEntity<Object> getUserById(@PathVariable("id") Integer id){
         UserRequestDto  userRequestDto=userService.getUserById(id);
+        userValidator.notFoundExceptionForId(userRequestDto.getId());
     return ResponseEntity.ok(userRequestDto);
     }
 
@@ -73,6 +74,7 @@ public class UserManagementController {
     return ResponseEntity.ok(userRequestDtoReturn);
     }
 
+    //Delete is for to delete a single row data in database
     @DeleteMapping(path = "/v1/users/{id}")
     public ResponseEntity<Object> deleteUser(@PathVariable("id") Integer id){
         UserRequestDto userRequestDto=userService.deleteUser(id);
