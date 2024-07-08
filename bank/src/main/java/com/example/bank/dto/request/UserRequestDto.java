@@ -27,6 +27,7 @@ public class UserRequestDto {
     private String accType;
     private Float rateOfInterest;
     private Double balance;
+
     private Integer createdBy;
     private LocalDateTime createdAt;
     private Integer updatedBy;

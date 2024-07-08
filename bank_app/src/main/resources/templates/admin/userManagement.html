@@ -109,7 +109,7 @@
                         <option value="">ID</option>
                     </select>
                     <button>
-                        <a href="/admin/dashboard/employeemanagement/registrationform">Add Record</a>
+                        <a href="/admin/dashboard/usermanagement/registrationform">Add Record</a>
                         </button>
                 </div>
 
@@ -152,8 +152,9 @@
 
                         <td>
                             <div class="actions">
-                                <a th:href="'/admin/dashboard/customerdetails/' + ${user.id}">
-                                <span class="lab la-telegram-plane"></span>
+                                <a th:href="'/admin/dashboard/usermanagement/userdetails/' + ${user.id}">
+<!--                                <span class="lab la-telegram-plane"></span>-->
+                                    <button>View Details</button>
                                     </a>
 <!--                                <span class="las la-eye"></span>-->
 <!--                                <span class="las la-ellipsis-v"></span>-->

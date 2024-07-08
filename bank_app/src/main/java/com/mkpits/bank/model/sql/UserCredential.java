@@ -3,7 +3,6 @@ package com.mkpits.bank.model.sql;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -12,29 +11,24 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Builder
-@Table(name = "account")
-public class Account {
-
+@Table(name = "user_credential")
+public class UserCredential {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
     @Column(name = "user_id")
     private Integer userId;
-    @Column(name = "account_type")
-    private String accType;
-    @Column(name = "balance")
-    private Double balance;
-    @Column(name = "account_number")
-    private String accNo;
-    @Column(name = "rate_of_interest")
-    private Double rateOfInterest;
-    @Column(name = "branch_id")
-    private Integer branchId;
-    @Column(name = "opening_date")
-    private LocalDate openingDate;
-    //    @Column(name = "closing_date")
-//    private LocalDate closeingDate;
+    @Column(name = "user_name")
+    private String userName;
+    @Column(name = "password")
+    private String password;
+    @Column(name = "password_salt")
+    private String passwordSalt;
+//    @Column(name = "user_role")
+//    private String userRole;
+    @Column(name = "login_date_time")
+    private String loginDateTime;
     @Column(name = "created_at")
     private LocalDateTime createdAt;
     @Column(name = "created_by")

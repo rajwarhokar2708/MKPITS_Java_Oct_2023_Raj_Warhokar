@@ -1,4 +1,4 @@
-package com.mkpits.bank.dto;
+package com.mkpits.bank.dto.responce;
 
 
 import lombok.*;
@@ -10,14 +10,6 @@ import lombok.*;
 @Builder
 public class UserResponseDto {
     private Integer id;
-//    private String firstName;
-//    private String middleName;
-//    private String lastName;
-//    private String mobile;
-//    private String email;
-//    private Character gender;
-//    private LocalDate dateOfBirth;
-//    private String cin;
     private String adhaarCard;
     private String firstName;
     private String middleName;
@@ -27,4 +19,8 @@ public class UserResponseDto {
     private String gender;
     private String dateOfBirth;
     private String cin;
+    private String address;
+    private String pinCode;
+    private String userName;
+    private String accType;
 }

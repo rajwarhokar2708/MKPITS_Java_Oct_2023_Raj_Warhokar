@@ -1,11 +1,15 @@
 package com.mkpits.bank.controller;
 
-import com.mkpits.bank.dto.AccountResponseDto;
-import com.mkpits.bank.dto.UserResponseDto;
+import com.mkpits.bank.dto.request.EmployeeRequestDto;
+import com.mkpits.bank.dto.responce.AccountResponseDto;
+import com.mkpits.bank.dto.responce.EmployeeResponceDto;
+import com.mkpits.bank.dto.responce.UserResponseDto;
 import com.mkpits.bank.dto.request.UserRequestDto;
 import com.mkpits.bank.service.IAccountService;
+import com.mkpits.bank.service.IEmployeeService;
 import com.mkpits.bank.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,12 +23,16 @@ public class AdminController {
     IUserService iUserService;
 
     @Autowired
+    IEmployeeService iEmployeeService;
+
+    @Autowired
     IAccountService iAccountService;
 
     @GetMapping("/admin/dashboard")
     public String adminDashboard() {
         return "/admin/index";
     }
+
 
     @GetMapping("/admin/dashboard/usermanagement")
     public String adminUserManagement(Model model) {
@@ -33,12 +41,7 @@ public class AdminController {
         return "admin/userManagement";
     }
 
-    @GetMapping("/admin/dashboard/employeemanagement")
-    public String adminEmployeeManagement() {
-        return "/admin/employeeManagement";
-    }
-
-    @GetMapping("/admin/dashboard/customerdetails/{userId}")
+    @GetMapping("/admin/dashboard/usermanagement/userdetails/{userId}")
     public String adminCustomerAccounts(@PathVariable("userId") Integer userId, Model model) {
         UserResponseDto userResponseDto = iUserService.getUserByIdUser(userId);
         List<AccountResponseDto> accountResponceDto = iAccountService.getAllUserAccounts(userId);
@@ -47,20 +50,42 @@ public class AdminController {
         return "admin/customer-accounts";
     }
 
-    @GetMapping("/admin/dashboard/employeemanagement/registrationform")
+    @GetMapping("/admin/dashboard/usermanagement/registrationform")
     public String userRegistrationForm() {
-        return "customers/registration";
+        return "admin/registration";
     }
 
+    @PostMapping("/admin/dashboard/usermanagement/register")
+    public String addregisterUser(@ModelAttribute UserRequestDto userRequestDto, Model model) {
+        UserResponseDto userResponseDto = iUserService.createUser(userRequestDto);
+        List<UserResponseDto> users = iUserService.getAllUsers();
+        model.addAttribute("userManagement", users);
+        return "admin/userManagement";
+    }
+
+    @GetMapping("/admin/dashboard/employeemanagement")
+    public String adminEmployeeManagement(Model model){
+        List<EmployeeResponceDto> employeeGetResponseDtoList =  iEmployeeService.getAllEmployees();
+        model.addAttribute("employeeManagement",employeeGetResponseDtoList);
+        return "admin/employeeManagement"/*ResponseEntity.ok(employeeGetResponseDtoList)*/;
+    }
+
+    @GetMapping("/admin/dashboard/employeemanagement/registrationform")
+    public String adminEmployeeRegistration() {
+        return "admin/employeeregistration";
+    }
 
     @PostMapping("/admin/dashboard/employeemanagement/register")
-    public String registerUser(@ModelAttribute UserRequestDto userRequestDto, Model model) {
-
-        UserResponseDto userResponseDto = iUserService.createUser(userRequestDto);
-
-        model.addAttribute("user", userResponseDto);
-        return "admin/userManagement"; // The view name of the success page
+    public String addregisterEmployee(@ModelAttribute EmployeeRequestDto employeeRequestDto, Model model) {
+        EmployeeResponceDto employeeResponceDto = iEmployeeService.createEmployee(employeeRequestDto);
+        List<EmployeeResponceDto> employeeGetResponseDtoList =  iEmployeeService.getAllEmployees();
+        model.addAttribute("employeeManagement",employeeGetResponseDtoList);
+        return "admin/employeeManagement"/*ResponseEntity.ok(employeeGetResponseDtoList)*/;
     }
+
+
+
+
 }
 
 

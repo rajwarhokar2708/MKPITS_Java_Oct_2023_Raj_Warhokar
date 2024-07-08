@@ -1,6 +1,6 @@
 package com.mkpits.bank.service;
 
-import com.mkpits.bank.dto.UserResponseDto;
+import com.mkpits.bank.dto.responce.UserResponseDto;
 import com.mkpits.bank.dto.request.UserRequestDto;
 
 import java.util.List;

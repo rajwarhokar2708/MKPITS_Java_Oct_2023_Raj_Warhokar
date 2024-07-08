@@ -9,16 +9,6 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class UserRequestDto {
-//    private Integer id;
-//    private String firstName;
-//    private String middleName;
-//    private String lastName;
-//    private String mobile;
-//    private String email;
-//    private Character gender;
-//    private LocalDate dateOfBirth;
-//    private String cin;
-//    private String aadharNo;
 
     private String firstName;
     private String middleName;
@@ -28,4 +18,10 @@ public class UserRequestDto {
     private String gender;
     private String dateOfBirth;
     private String adhaarCard;
+    private String address;
+    private String pinCode;
+    private String userName;
+    private String accType;
+    private String password;
+    private String passwordSalt;
 }

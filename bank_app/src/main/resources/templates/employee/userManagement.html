@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta
@@ -112,7 +112,7 @@
                     <select name="" id=" ">
                         <option value="">ID</option>
                     </select>
-                    <button>Add record</button>
+                    <button><a href="/employee/dashboard/employeemanagement/registrationform">Add Record</a></button>
                 </div>
 
                 <div class="browse">
@@ -131,35 +131,38 @@
                     <thead>
                     <tr>
                         <th>CIN</th>
-                        <th> NAME</th>
-                        <th> MOBILE</th>
-                        <th> ADHAR NUMBER</th>
-                        <th> GENDER</th>
-                        <th> ACTIONS</th>
+                        <th>NAME</th>
+                        <th>MOBILE</th>
+                        <th>ADHAR NUMBER</th>
+                        <th>GENDER</th>
+                        <th>ACTIONS</th>
                     </tr>
                     </thead>
+
                     <tbody>
-                    <tr>
-                        <td>12345678901234567</td>
+                    <tr th:each="user : ${userManagement}">
+                        <td th:text="${user.cin}"></td>
                         <td>
                             <div class="client">
-                                <div
-                                        class="client-img bg-img"
-                                        style="background-image: url(/images/employee/3.jpeg)"></div>
+                                <div class="client-img bg-img" style="background-image: url(/images/admin/1.jpeg)"></div>
                                 <div class="client-info">
-                                    <h4>Andrew Bruno</h4>
-                                    <small>bruno@crossover.org</small>
+                                    <h4 th:text="${user.firstName}"></h4>
+                                    <small th:text="${user.email}"></small>
                                 </div>
                             </div>
                         </td>
-                        <td>1234567890</td>
-                        <td>196576543256</td>
-                        <td>M</td>
+                        <td th:text="${user.mobile}"></td>
+                        <td th:text="${user.adhaarCard}"></td>
+                        <td th:text="${user.gender}"></td>
+
                         <td>
                             <div class="actions">
-                                <span class="lab la-telegram-plane"></span>
-                                <span class="las la-eye"></span>
-                                <span class="las la-ellipsis-v"></span>
+                                <a th:href="'/admin/dashboard/usermanagement/userdetails/' + ${user.id}">
+                                    <!--                                <span class="lab la-telegram-plane"></span>-->
+                                    <button>View Details</button>
+                                </a>
+                                <!--                                <span class="las la-eye"></span>-->
+                                <!--                                <span class="las la-ellipsis-v"></span>-->
                             </div>
                         </td>
                     </tr>
