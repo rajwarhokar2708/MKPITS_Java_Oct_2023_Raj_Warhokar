@@ -9,7 +9,7 @@
 <body>
 <div class="container">
   <h2>Registration Form</h2>
-  <form id="registrationForm" th:action="@{/admin/dashboard/usermanagement/register}" method="post">
+  <form id="registrationForm" th:action="@{/employee/dashboard/usermanagement/register}" method="post">
     <div class="form-row">
       <div class="form-group">
         <label for="first_name">First Name</label>
@@ -83,35 +83,6 @@
                     <option value="Customer">Customer</option>
                 </select>
             </div> -->
-    </div >
-
-    <div class="form-row">
-      <div class="form-group">
-      <label for="user_role">State</label>
-      <select id="user_role" name="state" required>
-        <option value="Maharashtra">Maharashtra</option>
-        <option value="Uttar Pradesh">Uttar Pradesh</option>
-        <option value="Madhya Pradesh">Madhya Pradesh</option>
-      </select>
-      </div>
-
-      <div class="form-group">
-        <label for="user_role">District</label>
-        <select id="user_role" name="district" required>
-          <option value="Nagpur">Nagpur</option>
-          <option value="Lucknow">Lucknow</option>
-          <option value="Indore">Indore</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="user_role">City</label>
-        <select id="user_role" name="state" required>
-          <option value="Nagpur">Nagpur</option>
-          <option value="Lucknow">Lucknow</option>
-          <option value="Indore">Indore</option>
-        </select>
-      </div>
     </div>
 
     <div class="form-row">

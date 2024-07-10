@@ -1,12 +1,10 @@
 package com.mkpits.bank.service.impl;
 
+import com.mkpits.bank.dto.responce.StateResponseDto;
 import com.mkpits.bank.dto.responce.UserResponseDto;
 import com.mkpits.bank.dto.request.UserRequestDto;
 import com.mkpits.bank.model.sql.*;
-import com.mkpits.bank.repository.AccountRepository;
-import com.mkpits.bank.repository.AddressRepository;
-import com.mkpits.bank.repository.UserCredentialRepository;
-import com.mkpits.bank.repository.UserRepository;
+import com.mkpits.bank.repository.*;
 import com.mkpits.bank.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,14 +29,23 @@ public class UserService implements IUserService {
     @Autowired
     AccountRepository accountRepository;
 
+    @Autowired
+    StateRepository stateRepository;
+
+    @Autowired
+    DistrictRepository districtRepository;
+
+    @Autowired
+    CityRepository cityRepository;
+
     Address address = new Address();
 
     @Override
     public List<UserResponseDto> getAllUsers() {
         List<User> usersList = (List<User>) userRepository.findAll();
-        List<UserResponseDto> userResponseDtoArrayList =new ArrayList<>();
-        for (User user : usersList){
-            UserResponseDto getUserResponseDto =convertUserModelToUserDto(user);
+        List<UserResponseDto> userResponseDtoArrayList = new ArrayList<>();
+        for (User user : usersList) {
+            UserResponseDto getUserResponseDto = convertUserModelToUserDto(user);
             userResponseDtoArrayList.add(getUserResponseDto);
         }
         return userResponseDtoArrayList;
@@ -47,20 +54,47 @@ public class UserService implements IUserService {
     @Override
     public UserResponseDto getUserByIdUser(Integer id) {
         Optional<User> userModel = userRepository.findById(id);
-//         address = addressRepository.findAccountsByUserId(id);
+        address = addressRepository.findAccountsByUserId(id);
         UserResponseDto userResponseDto = new UserResponseDto();
-        if (userModel.isPresent()){
-            userResponseDto.setAddress(address.getAddress());
-            userResponseDto = convertUserModelToUserDto(userModel.get());
-        }
+        userResponseDto = convertUserModelToUserDto(userModel.get());
         return userResponseDto;
     }
+
+
+
+
+
+
+//    public StateResponseDto getStateByName(String stateName) {
+//        State state = stateRepository.findByName(stateName);
+//        if (state != null) {
+//            return convertToDto(state);
+//        }
+//        return null; // Or handle as needed if state not found
+//    }
+//
+//    private StateResponseDto convertToDto(State state) {
+//        StateResponseDto stateDTO = new StateResponseDto();
+//        stateDTO.setId(state.getId());
+//        stateDTO.setStateName(state.getStateName());
+//        return stateDTO;
+//
+//
+//    }
+
+
+
+
+
+
+
+
 
     public UserResponseDto createUser(UserRequestDto userRequestDto) {
         User user = convertUserRequestDtoToUser(userRequestDto);
 
-        String cinNo= String.valueOf(LocalDateTime.now());
-        user.setCin(cinNo.replaceAll("[^0-9]", "").substring(0,cinNo.replaceAll("[^0-9]", "").length()-6));
+        String cinNo = String.valueOf(LocalDateTime.now()).replaceAll("[^0-9]", "").substring(0, 17);
+        user.setCin(cinNo);
         user.setCreatedAt(LocalDateTime.now());
         user.setCreatedBy(1);
         user = userRepository.save(user);
@@ -69,7 +103,7 @@ public class UserService implements IUserService {
         userCredential.setUserId(user.getId());
 //        userCredential.setUserName(userRequestDto.getUserName());
         userCredential.setPassword(userRequestDto.getPassword());
-        userCredential=userCredentialRepository.save(userCredential);
+        userCredential = userCredentialRepository.save(userCredential);
 
 
         address.setUserId(user.getId());
@@ -80,16 +114,19 @@ public class UserService implements IUserService {
         Account account = new Account();
         account.setUserId(user.getId());
         account.setAccType(userRequestDto.getAccType());
-        String cityCode = "456";String districtCode="852";String stateCode="624";String remaingAccountNumber = "0123";
-        account.setAccNo(stateCode+cityCode+districtCode+remaingAccountNumber);
+//        String cityCode = createAccountNo("Maharashtra");
+//        String districtCode = "852";
+//        String stateCode = "624";
+//        String remaingAccountNumber = "0123";
+        account.setAccNo(createAccountNo());
         account.setOpeningDate(LocalDate.now());
         account.setBalance(0.0);
         account = accountRepository.save(account);
 
-        return convertUserToUserResponseDto(user,userCredential,address,account);
+        return convertUserToUserResponseDto(user, userCredential, address, account);
     }
 
-    private UserResponseDto convertUserToUserResponseDto(User user,UserCredential userCredential,Address address,Account account) {
+    private UserResponseDto convertUserToUserResponseDto(User user, UserCredential userCredential, Address address, Account account) {
 
         return UserResponseDto.builder()
                 .firstName(user.getFirstName())
@@ -126,12 +163,27 @@ public class UserService implements IUserService {
         UserResponseDto getUserResponseDto = UserResponseDto.builder()
                 .id(user.getId())
                 .firstName(user.getFirstName())
+                .middleName(user.getMiddleName())
+                .lastName(user.getLastName())
                 .email(user.getEmail())
                 .mobile(user.getMobile())
                 .gender(user.getGender())
                 .cin(user.getCin())
                 .adhaarCard(user.getAdhaarCard())
+                .address(address.getAddress())
                 .build();
         return getUserResponseDto;
     }
+
+    public String createAccountNo(){
+        State state = stateRepository.findStateByName("Maharashtra");
+       String stateId = "";
+        System.out.println(state.getStateName());
+//       Integer stateCode;
+       if (state.getStateName()=="Maharashtra"){
+           stateId = String.valueOf(state.getId());
+       }
+       return stateId;
+    }
+
 }

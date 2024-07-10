@@ -110,14 +110,11 @@
                     </select>
                     <button>
                         <a href="/admin/dashboard/usermanagement/registrationform">Add Record</a>
-                        </button>
+                    </button>
                 </div>
 
                 <div class="browse">
-                    <input type="search" placeholder="Search" class="record-search" />
-                    <select name="" id="">
-                        <option value="">Status</option>
-                    </select>
+                    <input type="text" id="searchInput" placeholder="Search" class="record-search" />
                 </div>
             </div>
 
@@ -134,14 +131,14 @@
                     </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody id="itemList">
                     <tr th:each="user : ${userManagement}">
                         <td th:text="${user.cin}"></td>
                         <td>
                             <div class="client">
                                 <div class="client-img bg-img" style="background-image: url(/images/admin/1.jpeg)"></div>
                                 <div class="client-info">
-                                    <h4 th:text="${user.firstName}"></h4>
+                                    <h4 class="name" th:text="${user.firstName} +' '+${user.middleName}+' ' +${user.lastName}"></h4>
                                     <small th:text="${user.email}"></small>
                                 </div>
                             </div>
@@ -153,11 +150,8 @@
                         <td>
                             <div class="actions">
                                 <a th:href="'/admin/dashboard/usermanagement/userdetails/' + ${user.id}">
-<!--                                <span class="lab la-telegram-plane"></span>-->
                                     <button>View Details</button>
-                                    </a>
-<!--                                <span class="las la-eye"></span>-->
-<!--                                <span class="las la-ellipsis-v"></span>-->
+                                </a>
                             </div>
                         </td>
                     </tr>
@@ -167,7 +161,26 @@
         </div>
     </main>
 </div>
-</body>
-<!--<a id="customerLink" href="#">Customer Details</a>-->
 
+<script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let filter = this.value.toUpperCase();
+        let rows = document.getElementById('itemList').getElementsByTagName('tr');
+
+        for (let i = 0; i < rows.length; i++) {
+            let nameElement = rows[i].getElementsByClassName('name')[0];
+            if (nameElement) {
+                let txtValue = nameElement.textContent || nameElement.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    });
+</script>
+
+</body>
 </html>
+

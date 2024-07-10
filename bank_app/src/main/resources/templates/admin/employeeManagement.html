@@ -124,13 +124,10 @@
                 </div>
 
                 <div class="browse">
-                    <input
-                            type="search"
-                            placeholder="Search"
-                            class="record-search"/>
-                    <select name="">
-                        <option value="">Status</option>
-                    </select>
+                    <input type="text" id="searchInput" placeholder="Search" class="record-search" />
+<!--                    <select name="">-->
+<!--                        <option value="">Status</option>-->
+<!--                    </select>-->
                 </div>
             </div>
 
@@ -146,10 +143,10 @@
                         <th><span class="las la-sort"></span> Gender</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="itemList">
                     <tr th:each="employee: ${employeeManagement}">
                         <td th:text="${employee.id}"></td>
-                        <td th:text="${employee.fullName}">
+                        <td class="name" th:text="${employee.fullName}">
                             <!--                            <div class="client">-->
                             <!--                                &lt;!&ndash;                <div class="client-img bg-img" style="background-image: url(/images/admin/1.jpeg)"></div>&ndash;&gt;-->
                             <!--                                <div class="client-info">-->
@@ -163,205 +160,7 @@
                         <td th:text="${employee.aadharNo}"></td>
                         <td th:text="${employee.gender}"></td>
 
-                        <!-- <td>
-                             <div class="actions">
-                                 <a th:href="'/admin/dashboard/customerdetails/' + ${employee.id}">
-                                     <span class="lab la-telegram-plane"></span>
-                                 </a>
-                             </div>
-                         </td>-->
                     </tr>
-
-
-                    <!--                    <tr>-->
-                    <!--                        <td>#5033</td>-->
-                    <!--                        <td>-->
-                    <!--                            <div class="client">-->
-                    <!--                                <div-->
-                    <!--                                        class="client-img bg-img"-->
-                    <!--                                        style="background-image: url(/images/admin/6.jpeg)"></div>-->
-                    <!--                                <div class="client-info">-->
-                    <!--                                    <h4>Exty Bruno</h4>-->
-                    <!--                                    <small>exty@crossover.org</small>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-
-                    <!--                        <td>19 April, 2022</td>-->
-                    <!--                        <td>-->
-                    <!--                            <div class="actions">-->
-                    <!--                                <span class="lab la-telegram-plane"></span>-->
-                    <!--                                <span class="las la-eye"></span>-->
-                    <!--                                <span class="las la-ellipsis-v"></span>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-                    <!--                    </tr>-->
-                    <!--                    <tr>-->
-                    <!--                        <td>#5033</td>-->
-                    <!--                        <td>-->
-                    <!--                            <div class="client">-->
-                    <!--                                <div-->
-                    <!--                                        class="client-img bg-img"-->
-                    <!--                                        style="background-image: url(/images/admin/6.jpeg)"></div>-->
-                    <!--                                <div class="client-info">-->
-                    <!--                                    <h4>Exty Bruno</h4>-->
-                    <!--                                    <small>exty@crossover.org</small>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-
-                    <!--                        <td>19 April, 2022</td>-->
-
-                    <!--                        <td>-->
-                    <!--                            <div class="actions">-->
-                    <!--                                <span class="lab la-telegram-plane"></span>-->
-                    <!--                                <span class="las la-eye"></span>-->
-                    <!--                                <span class="las la-ellipsis-v"></span>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-                    <!--                    </tr>-->
-                    <!--                    <tr>-->
-                    <!--                        <td>#5033</td>-->
-                    <!--                        <td>-->
-                    <!--                            <div class="client">-->
-                    <!--                                <div-->
-                    <!--                                        class="client-img bg-img"-->
-                    <!--                                        style="background-image: url(/images/admin/6.jpeg)"></div>-->
-                    <!--                                <div class="client-info">-->
-                    <!--                                    <h4>Andrew Bruno</h4>-->
-                    <!--                                    <small>bruno@crossover.org</small>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-
-                    <!--                        <td>19 April, 2022</td>-->
-
-                    <!--                        <td>-->
-                    <!--                            <div class="actions">-->
-                    <!--                                <span class="lab la-telegram-plane"></span>-->
-                    <!--                                <span class="las la-eye"></span>-->
-                    <!--                                <span class="las la-ellipsis-v"></span>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-                    <!--                    </tr>-->
-                    <!--                    <tr>-->
-                    <!--                        <td>#5033</td>-->
-                    <!--                        <td>-->
-                    <!--                            <div class="client">-->
-                    <!--                                <div-->
-                    <!--                                        class="client-img bg-img"-->
-                    <!--                                        style="background-image: url(/images/admin/6.jpeg)"></div>-->
-                    <!--                                <div class="client-info">-->
-                    <!--                                    <h4>Exty Bruno</h4>-->
-                    <!--                                    <small>exty@crossover.org</small>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-
-                    <!--                        <td>19 April, 2022</td>-->
-
-                    <!--                        <td>-->
-                    <!--                            <div class="actions">-->
-                    <!--                                <span class="lab la-telegram-plane"></span>-->
-                    <!--                                <span class="las la-eye"></span>-->
-                    <!--                                <span class="las la-ellipsis-v"></span>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-                    <!--                    </tr>-->
-                    <!--                    <tr>-->
-                    <!--                        <td>#5033</td>-->
-                    <!--                        <td>-->
-                    <!--                            <div class="client">-->
-                    <!--                                <div-->
-                    <!--                                        class="client-img bg-img"-->
-                    <!--                                        style="background-image: url(/images/admin/6.jpeg)"></div>-->
-                    <!--                                <div class="client-info">-->
-                    <!--                                    <h4>Exty Bruno</h4>-->
-                    <!--                                    <small>exty@crossover.org</small>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-
-                    <!--                        <td>19 April, 2022</td>-->
-
-                    <!--                        <td>-->
-                    <!--                            <div class="actions">-->
-                    <!--                                <span class="lab la-telegram-plane"></span>-->
-                    <!--                                <span class="las la-eye"></span>-->
-                    <!--                                <span class="las la-ellipsis-v"></span>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-                    <!--                    </tr>-->
-                    <!--                    <tr>-->
-                    <!--                        <td>#5033</td>-->
-                    <!--                        <td>-->
-                    <!--                            <div class="client">-->
-                    <!--                                <div-->
-                    <!--                                        class="client-img bg-img"-->
-                    <!--                                        style="background-image: url(/images/admin/6.jpeg)"></div>-->
-                    <!--                                <div class="client-info">-->
-                    <!--                                    <h4>Andrew Bruno</h4>-->
-                    <!--                                    <small>bruno@crossover.org</small>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-
-                    <!--                        <td>19 April, 2022</td>-->
-                    <!--                        <td>-->
-                    <!--                            <div class="actions">-->
-                    <!--                                <span class="lab la-telegram-plane"></span>-->
-                    <!--                                <span class="las la-eye"></span>-->
-                    <!--                                <span class="las la-ellipsis-v"></span>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-                    <!--                    </tr>-->
-                    <!--                    <tr>-->
-                    <!--                        <td>#5033</td>-->
-                    <!--                        <td>-->
-                    <!--                            <div class="client">-->
-                    <!--                                <div-->
-                    <!--                                        class="client-img bg-img"-->
-                    <!--                                        style="background-image: url(/images/admin/6.jpeg)"></div>-->
-                    <!--                                <div class="client-info">-->
-                    <!--                                    <h4>Exty Bruno</h4>-->
-                    <!--                                    <small>exty@crossover.org</small>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-
-                    <!--                        <td>19 April, 2022</td>-->
-                    <!--                        <td>-->
-                    <!--                            <div class="actions">-->
-                    <!--                                <span class="lab la-telegram-plane"></span>-->
-                    <!--                                <span class="las la-eye"></span>-->
-                    <!--                                <span class="las la-ellipsis-v"></span>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-                    <!--                    </tr>-->
-                    <!--                    <tr>-->
-                    <!--                        <td>#5033</td>-->
-                    <!--                        <td>-->
-                    <!--                            <div class="client">-->
-                    <!--                                <div-->
-                    <!--                                        class="client-img bg-img"-->
-                    <!--                                        style="background-image: url(/images/admin/6.jpeg)"></div>-->
-                    <!--                                <div class="client-info">-->
-                    <!--                                    <h4>Exty Bruno</h4>-->
-                    <!--                                    <small>exty@crossover.org</small>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-
-                    <!--                        <td>19 April, 2022</td>-->
-
-                    <!--                        <td>-->
-                    <!--                            <div class="actions">-->
-                    <!--                                <span class="lab la-telegram-plane"></span>-->
-                    <!--                                <span class="las la-eye"></span>-->
-                    <!--                                <span class="las la-ellipsis-v"></span>-->
-                    <!--                            </div>-->
-                    <!--                        </td>-->
-                    <!--                    </tr>-->
                     </tbody>
                 </table>
             </div>
@@ -369,4 +168,22 @@
     </main>
 </div>
 </body>
+<script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+        let filter = this.value.toUpperCase();
+        let rows = document.getElementById('itemList').getElementsByTagName('tr');
+
+        for (let i = 0; i < rows.length; i++) {
+            let nameElement = rows[i].getElementsByClassName('name')[0];
+            if (nameElement) {
+                let txtValue = nameElement.textContent || nameElement.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    });
+</script>
 </html>

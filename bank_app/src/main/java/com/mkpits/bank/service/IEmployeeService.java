@@ -1,13 +1,13 @@
 package com.mkpits.bank.service;
 
 import com.mkpits.bank.dto.request.EmployeeRequestDto;
-import com.mkpits.bank.dto.responce.EmployeeResponceDto;
+import com.mkpits.bank.dto.responce.EmployeeResponseDto;
 
 import java.util.List;
 
 public interface IEmployeeService {
-    public List<EmployeeResponceDto> getAllEmployees();
+    public List<EmployeeResponseDto> getAllEmployees();
 
-    public EmployeeResponceDto createEmployee(EmployeeRequestDto employeeRequestDto);
+    public EmployeeResponseDto createEmployee(EmployeeRequestDto employeeRequestDto);
 
 }

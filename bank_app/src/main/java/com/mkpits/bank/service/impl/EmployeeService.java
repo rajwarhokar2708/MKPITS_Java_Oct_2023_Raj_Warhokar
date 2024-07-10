@@ -1,7 +1,7 @@
 package com.mkpits.bank.service.impl;
 
 import com.mkpits.bank.dto.request.EmployeeRequestDto;
-import com.mkpits.bank.dto.responce.EmployeeResponceDto;
+import com.mkpits.bank.dto.responce.EmployeeResponseDto;
 import com.mkpits.bank.model.sql.Employee;
 import com.mkpits.bank.model.sql.EmployeeCredential;
 import com.mkpits.bank.repository.EmployeeCredentialRepository;
@@ -26,20 +26,20 @@ public class EmployeeService implements IEmployeeService {
 
 
     @Override
-    public List<EmployeeResponceDto> getAllEmployees() {
+    public List<EmployeeResponseDto> getAllEmployees() {
 
         List<Employee> employeeList = (List<Employee>) employeeRepo.findAll();
-        List<EmployeeResponceDto> employeeResponceDtoArrayList = new ArrayList<>();
+        List<EmployeeResponseDto> employeeResponseDtoArrayList = new ArrayList<>();
         for (Employee employee : employeeList){
-            EmployeeResponceDto getEmployeeResponceDto =  convertEmployeeModelToEmployeeDto(employee);
-            employeeResponceDtoArrayList.add(getEmployeeResponceDto);
+            EmployeeResponseDto getEmployeeResponseDto =  convertEmployeeModelToEmployeeDto(employee);
+            employeeResponseDtoArrayList.add(getEmployeeResponseDto);
         }
-        return employeeResponceDtoArrayList;
+        return employeeResponseDtoArrayList;
     }
 
     @Transactional
     @Override
-    public EmployeeResponceDto createEmployee(EmployeeRequestDto employeeRequestDto) {
+    public EmployeeResponseDto createEmployee(EmployeeRequestDto employeeRequestDto) {
         Employee employee = convertEmployeeRequestDtoToEmployee(employeeRequestDto);
         employee.setCreatedBy(1);
         employee.setCreatedAt(LocalDateTime.now());
@@ -56,8 +56,8 @@ public class EmployeeService implements IEmployeeService {
         return convertEmployeeToEmployeeResponceDto(employee);
     }
 
-    private EmployeeResponceDto convertEmployeeToEmployeeResponceDto(Employee employee) {
-        return EmployeeResponceDto.builder()
+    private EmployeeResponseDto convertEmployeeToEmployeeResponceDto(Employee employee) {
+        return EmployeeResponseDto.builder()
                 .fullName(employee.getFullName())
                 .id(employee.getId())
                 .email(employee.getEmail())
@@ -84,8 +84,8 @@ public class EmployeeService implements IEmployeeService {
     }
 
 
-    private EmployeeResponceDto convertEmployeeModelToEmployeeDto(Employee employee) {
-        EmployeeResponceDto getEmployeeResponceDto = EmployeeResponceDto.builder()
+    private EmployeeResponseDto convertEmployeeModelToEmployeeDto(Employee employee) {
+        EmployeeResponseDto getEmployeeResponseDto = EmployeeResponseDto.builder()
                 .id(employee.getId())
                 .fullName(employee.getFullName())
                 .email(employee.getEmail())
@@ -98,7 +98,7 @@ public class EmployeeService implements IEmployeeService {
 //                .address(employee.getAddress())
                 .build();
 
-        return getEmployeeResponceDto;
+        return getEmployeeResponseDto;
 }
 
 }

@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class EmployeeResponceDto {
+public class EmployeeResponseDto {
     private Integer id;
     private String fullName;
     private String mobile;

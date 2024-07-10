@@ -9,14 +9,14 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AddressResponceDto {
+public class UserCredentialResponseDto {
     private Integer id;
     private Integer userId;
-    private String address;
-    private String pinCode;
-    private Integer cityId;
-    private Integer districtId;
-    private Integer stateId;
+    private String userName;
+    private String password;
+    private String passwordSalt;
+    private String userRole;
+    private String loginDateTime;
     private LocalDateTime createdAt;
     private Integer createdBy;
     private LocalDateTime updatedAt;

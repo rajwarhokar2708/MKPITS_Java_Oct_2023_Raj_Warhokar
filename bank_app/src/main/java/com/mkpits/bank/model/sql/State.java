@@ -18,9 +18,7 @@ public class State {
     @Column(name = "id")
     private Integer id;
     @Column(name = "name")
-    private String stateName;
-    @Column(name = "code")
-    private String stateCode;
+    private String name;
     @Column(name = "created_at")
     private LocalDateTime createdAt;
     @Column(name = "created_by")

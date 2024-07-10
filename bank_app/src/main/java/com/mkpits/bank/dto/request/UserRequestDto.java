@@ -19,6 +19,9 @@ public class UserRequestDto {
     private String dateOfBirth;
     private String adhaarCard;
     private String address;
+    private String state;
+    private String district;
+    private String city;
     private String pinCode;
     private String userName;
     private String accType;

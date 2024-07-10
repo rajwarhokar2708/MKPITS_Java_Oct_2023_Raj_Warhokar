@@ -2,14 +2,13 @@ package com.mkpits.bank.controller;
 
 import com.mkpits.bank.dto.request.EmployeeRequestDto;
 import com.mkpits.bank.dto.responce.AccountResponseDto;
-import com.mkpits.bank.dto.responce.EmployeeResponceDto;
+import com.mkpits.bank.dto.responce.EmployeeResponseDto;
 import com.mkpits.bank.dto.responce.UserResponseDto;
 import com.mkpits.bank.dto.request.UserRequestDto;
 import com.mkpits.bank.service.IAccountService;
 import com.mkpits.bank.service.IEmployeeService;
 import com.mkpits.bank.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -65,7 +64,7 @@ public class AdminController {
 
     @GetMapping("/admin/dashboard/employeemanagement")
     public String adminEmployeeManagement(Model model){
-        List<EmployeeResponceDto> employeeGetResponseDtoList =  iEmployeeService.getAllEmployees();
+        List<EmployeeResponseDto> employeeGetResponseDtoList =  iEmployeeService.getAllEmployees();
         model.addAttribute("employeeManagement",employeeGetResponseDtoList);
         return "admin/employeeManagement"/*ResponseEntity.ok(employeeGetResponseDtoList)*/;
     }
@@ -77,8 +76,8 @@ public class AdminController {
 
     @PostMapping("/admin/dashboard/employeemanagement/register")
     public String addregisterEmployee(@ModelAttribute EmployeeRequestDto employeeRequestDto, Model model) {
-        EmployeeResponceDto employeeResponceDto = iEmployeeService.createEmployee(employeeRequestDto);
-        List<EmployeeResponceDto> employeeGetResponseDtoList =  iEmployeeService.getAllEmployees();
+        EmployeeResponseDto employeeResponseDto = iEmployeeService.createEmployee(employeeRequestDto);
+        List<EmployeeResponseDto> employeeGetResponseDtoList =  iEmployeeService.getAllEmployees();
         model.addAttribute("employeeManagement",employeeGetResponseDtoList);
         return "admin/employeeManagement"/*ResponseEntity.ok(employeeGetResponseDtoList)*/;
     }

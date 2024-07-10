@@ -19,8 +19,6 @@ public class City {
     private Integer id;
     @Column(name = "name")
     private String cityName;
-    @Column(name = "code")
-    private Integer cityCode;
     @Column(name = "district_id")
     private Integer districtId;
     @Column(name = "created_at")

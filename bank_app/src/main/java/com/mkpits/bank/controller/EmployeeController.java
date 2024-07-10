@@ -34,12 +34,12 @@ public class EmployeeController {
         return "/employee/userManagement";
     }
 
-    @GetMapping("/employee/dashboard/employeemanagement/registrationform")
+    @GetMapping("/employee/dashboard/usermanagement/registrationform")
     public String userRegistrationForm() {
-        return "employee/employeetouserregistration";
+        return "employee/registration";
     }
 
-    @PostMapping("/employee/dashboard/employeemanagement/register")
+    @PostMapping("/employee/dashboard/usermanagement/register")
     public String registerUser(@ModelAttribute UserRequestDto userRequestDto, Model model) {
         UserResponseDto userResponseDto = iUserService.createUser(userRequestDto);
         List<UserResponseDto> users = iUserService.getAllUsers();

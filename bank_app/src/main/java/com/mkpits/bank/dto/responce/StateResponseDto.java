@@ -7,8 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class StateResponceDto {
+public class StateResponseDto {
     private Integer id;
     private String stateName;
-    private String stateCode;
 }

@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class BranchResponceDto {
+public class BranchResponseDto {
     private Integer id;
     private String branchName;
     private Integer branchCode;
